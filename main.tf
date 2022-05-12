@@ -6,7 +6,10 @@ resource "aws_instance" "webserver" {
   tags = {
     Name = "webserver"
   }
-   key_name = aws_key_pair.webserverkey.id
+   key_name = data.aws_key_pair.webserverkey.id
+}
+data "aws_key_pair" "webserverkey" {
+name ="webserver-key"
 }
 variable "ami" {}
 variable "instance_type" {}
