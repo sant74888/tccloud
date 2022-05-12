@@ -32,10 +32,10 @@ variable "access_key" {}
 data "aws_security_group" "sshgroup" {
 name ="SSH INBOUND"
 }
-resource "aws_key_pair" "webserverkey" {
-  key_name   = "webserver-key"
-  public_key = file("key.pub")
-}
+#resource "aws_key_pair" "webserverkey" {
+ # key_name   = "webserver-key"
+#  public_key = file("key.pub")
+#}
 output publicip {
 value= aws_instance.webserver.public_ip
 }
