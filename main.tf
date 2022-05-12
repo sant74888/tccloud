@@ -8,6 +8,10 @@ resource "aws_instance" "webserver" {
   }
    key_name = aws_key_pair.webserverkey.id
 }
+variable "ami" {}
+variable "instance_type" {}
+variable "secret_key" {}
+variable "access_key" {}
 #resource "aws_security_group" "webserver-ssh" {
  # name        = "SSH inbound"
  # description = "Allow SSH inbound traffic"
