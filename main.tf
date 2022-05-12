@@ -6,7 +6,7 @@ resource "aws_instance" "webserver" {
   tags = {
     Name = "webserver"
   }
-   key_name = data.aws_key_pair.webserverkey.id
+   key_name = data.aws_key_pair.webserverkey.key_name
 }
 data "aws_key_pair" "webserverkey" {
 key_name ="webserver-key"
